@@ -1,0 +1,26 @@
+[2022-08-30T02:25:15.541+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: postgres_operator_dag.get_birth_date manual__2022-08-30T02:25:07.586200+00:00 [queued]>
+[2022-08-30T02:25:15.552+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: postgres_operator_dag.get_birth_date manual__2022-08-30T02:25:07.586200+00:00 [queued]>
+[2022-08-30T02:25:15.552+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-30T02:25:15.552+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2022-08-30T02:25:15.552+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-30T02:25:15.574+0000] {taskinstance.py:1389} INFO - Executing <Task(PostgresOperator): get_birth_date> on 2022-08-30 02:25:07.586200+00:00
+[2022-08-30T02:25:15.579+0000] {standard_task_runner.py:52} INFO - Started process 131 to run task
+[2022-08-30T02:25:15.582+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'postgres_operator_dag', 'get_birth_date', 'manual__2022-08-30T02:25:07.586200+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/postgres_operator_dag.py', '--cfg-path', '/tmp/tmpieycxz7l', '--error-file', '/tmp/tmpzp24ivwu']
+[2022-08-30T02:25:15.582+0000] {standard_task_runner.py:80} INFO - Job 22: Subtask get_birth_date
+[2022-08-30T02:25:15.647+0000] {task_command.py:371} INFO - Running <TaskInstance: postgres_operator_dag.get_birth_date manual__2022-08-30T02:25:07.586200+00:00 [running]> on host 7f44611b6b02
+[2022-08-30T02:25:15.722+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=postgres_operator_dag
+AIRFLOW_CTX_TASK_ID=get_birth_date
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-30T02:25:07.586200+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-30T02:25:07.586200+00:00
+[2022-08-30T02:25:15.734+0000] {base.py:68} INFO - Using connection ID 'postgres_default' for task execution.
+[2022-08-30T02:25:15.738+0000] {sql.py:315} INFO - Running statement: Composed([SQL('SET '), Identifier('statement_timeout'), SQL(' TO %(statement_timeout)s;')]), parameters: {'statement_timeout': '3000ms', 'begin_date': '2020-01-01', 'end_date': '2020-12-31'}
+[2022-08-30T02:25:15.738+0000] {sql.py:315} INFO - Running statement: SQL('SELECT * FROM pet WHERE birth_date BETWEEN SYMMETRIC %(begin_date)s AND %(end_date)s'), parameters: {'statement_timeout': '3000ms', 'begin_date': '2020-01-01', 'end_date': '2020-12-31'}
+[2022-08-30T02:25:15.739+0000] {sql.py:324} INFO - Rows affected: 2
+[2022-08-30T02:25:15.751+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=postgres_operator_dag, task_id=get_birth_date, execution_date=20220830T022507, start_date=20220830T022515, end_date=20220830T022515
+[2022-08-30T02:25:15.794+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-30T02:25:15.839+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check
